@@ -3,7 +3,7 @@
 @section('content')
     <div class="card py-5">
         <div class="card-body">
-            <h1>Sharma coder</h1>
+            <h1>PharmaCosmetica</h1>
             <hr>
             <div class="container">
                 <div class="row">
