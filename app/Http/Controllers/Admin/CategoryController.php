@@ -52,7 +52,7 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        $category = Category::find($id);
+        $category = Category::find($id); //
         if($request->hasFile('image'))
         {
             $path = 'assets/uploads/category/'.$category->image;
