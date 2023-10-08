@@ -21,7 +21,7 @@ class FrontendController extends Controller
     }
 
     public function category()
-    {
+    {  //mostrar a categoria no front consoante o status que escolhemos 
         $category = Category::where('status','0')->get();
         return view('frontend.category', compact('category'));
     }
