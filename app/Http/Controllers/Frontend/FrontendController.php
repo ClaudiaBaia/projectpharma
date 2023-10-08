@@ -19,13 +19,13 @@ class FrontendController extends Controller
         $trending_category = Category::where('popular','1')->take(15)->get();
         return view('frontend.index', compact('featured_products', 'trending_category'));
     }
-
+    //mostrar a categoria no front consoante o status que escolhemos 
     public function category()
-    {  //mostrar a categoria no front consoante o status que escolhemos 
+    {  
         $category = Category::where('status','0')->get();
         return view('frontend.category', compact('category'));
     }
-
+    //ao clicar na categoria podemos ver os produtos correspondentes 
     public function viewcategory($slug)
     {
         if(Category::where('slug', $slug)->exists())
