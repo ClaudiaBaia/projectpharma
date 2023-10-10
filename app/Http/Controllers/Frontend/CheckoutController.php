@@ -17,7 +17,7 @@ class CheckoutController extends Controller
     public function index()
     {
         $old_cartitems = Cart::where('user_id', Auth::id())->get();
-        foreach($old_cartitems as $item)
+        foreach($old_cartitems as $item) // se tiver fora de stock ele retira do cart quando se clica no proceed to checkout
         {
             if(!Product::where('id', $item->prod_id)->where('qty','>=',$item->prod_qty)->exists())
             {
@@ -29,7 +29,7 @@ class CheckoutController extends Controller
 
         return view('frontend.checkout', compact('cartitems'));
     }
-
+        // preencher detalhes do pedido(encomenda)
     public function placeorder(Request $request)
     {
         $order = new Order();
@@ -48,7 +48,7 @@ class CheckoutController extends Controller
         $order->payment_mode = $request->input('payment_mode');
         $order->payment_id = $request->input('payment_id');
 
-        // To Calculate the total price
+        // calcula o  total price
         $total = 0;
         $cartitems_total = Cart::where('user_id', Auth::id())->get();
         foreach($cartitems_total as $prod)
@@ -58,7 +58,7 @@ class CheckoutController extends Controller
 
         $order->total_price = $total;
 
-        $order->tracking_no = 'sharma'.rand(1111,9999);
+        $order->tracking_no = 'claudia'.rand(1111,9999);
         $order->save();
 
         $cartitems = Cart::where('user_id', Auth::id())->get();
