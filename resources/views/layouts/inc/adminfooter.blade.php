@@ -4,7 +4,7 @@
         <ul>
           <li>
             <a href="#">
-              E-shop
+             PharmaCosmetica
             </a>
           </li>
           <li>

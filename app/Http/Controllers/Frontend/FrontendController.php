@@ -17,7 +17,8 @@ class FrontendController extends Controller
     {
         $featured_products = Product::where('trending','1')->take(15)->get();
         $trending_category = Category::where('popular','1')->take(15)->get();
-        return view('frontend.index', compact('featured_products', 'trending_category'));
+       return view('frontend.index', compact('featured_products', 'trending_category'));
+
     }
     //mostrar a categoria no front consoante o status que escolhemos 
     public function category()
@@ -26,18 +27,20 @@ class FrontendController extends Controller
         return view('frontend.category', compact('category'));
     }
     //ao clicar na categoria podemos ver os produtos correspondentes 
-    public function viewcategory($slug)
+   public function viewcategory($slug)
     {
-        if(Category::where('slug', $slug)->exists())
-        {
-            $category = Category::where('slug', $slug)->first();
-            $products = Product::where('cate_id', $category->id)->where('status','0')->get();
-            return view('frontend.products.index', compact('category','products'));
-        }
-        else{
-            return redirect('/')->with('status',"Slug doesnot exists");
-        }
+    $category = Category::where('slug', $slug)->first();
+
+    if (!$category) {
+        return redirect('/')->with('status', "Category with this slug does not exist");
     }
+
+    $products = Product::where('cate_id', $category->id)->where('status', '0')->get();
+
+   return view('frontend.products.index')->with('category', $category)->with('products', $products);
+
+    }
+
 
     public function productview($cate_slug, $prod_slug)
     {
