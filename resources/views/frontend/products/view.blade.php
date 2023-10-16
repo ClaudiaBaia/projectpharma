@@ -82,8 +82,8 @@
                         @endif
                     </h2>
                     <hr>
-                    <label class="me-3">Original Price : <s>Rs {{ $products->original_price }}</s></label>
-                    <label class="fw-bold">Selling Price : Rs {{ $products->selling_price }}</label>
+                    <label class="me-3">Original Price : <s>€ {{ $products->original_price }}</s></label>
+                    <label class="fw-bold">Selling Price : € {{ $products->selling_price }}</label>
                     @php $ratenum = number_format($rating_value) @endphp
                     <div class="rating">
                         @for($i =1; $i<= $ratenum; $i++)
