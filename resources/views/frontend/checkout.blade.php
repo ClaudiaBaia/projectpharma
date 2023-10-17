@@ -110,10 +110,10 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <h6 class="px-2">Grand Total  <span class="float-end">Rs {{ $total }} </span></h6>
+                                <h6 class="px-2">Grand Total  <span class="float-end">€ {{ $total }} </span></h6>
                                 <hr>
                                 <input type="hidden" name="payment_mode" value="COD">
-                                <button type="submit" class="btn btn-success w-100 mb-2">Place Order | COD</button>
+                                <button type="submit" class="btn btn-success w-100 mb-2">Place Order</button>
                                 <button type="button" class="btn btn-primary w-100 mb-2 razorpay_btn">Pay with Razorpay</button>
                                 <div id="paypal-button-container"></div>
                             @else

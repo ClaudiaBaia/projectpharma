@@ -32,7 +32,7 @@
                             <h6>{{ $item->products->name }}</h6>
                         </div>
                         <div class="col-md-2 my-auto">
-                            <h6> Rs {{ $item->products->selling_price }}</h6>
+                            <h6> € {{ $item->products->selling_price }}</h6>
                         </div>
                         <div class="col-md-3 my-auto">
                             <input type="hidden" class="prod_id" value="{{ $item->prod_id }}">
