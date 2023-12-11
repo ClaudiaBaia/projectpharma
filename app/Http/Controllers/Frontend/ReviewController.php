@@ -58,7 +58,7 @@ class ReviewController extends Controller
         }
         else
         {
-            return redirect()->back()->with('status',"The link you followed was broken");
+            return redirect()->back()->with('status',"The link was broken");
         }
 
 
@@ -77,12 +77,12 @@ class ReviewController extends Controller
             }
             else
             {
-                return redirect()->back()->with('status',"The link you followed was broken");
+                return redirect()->back()->with('status',"The link  was broken");
             }
         }
         else
         {
-            return redirect()->back()->with('status',"The link you followed was broken");
+            return redirect()->back()->with('status',"The link  was broken");
         }
     }
 
@@ -101,7 +101,7 @@ class ReviewController extends Controller
             }
             else
             {
-                return redirect()->back()->with('status',"The link you followed was broken");
+                return redirect()->back()->with('status',"The link  was broken");
             }
         }
         else
