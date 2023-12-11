@@ -74,7 +74,7 @@
                 <div class="col-md-4 border-right">
                     <img src="{{ asset('assets/uploads/products/'.$products->image) }}" class="w-100" alt="">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8"> <!--nome do produto e etiqueta-->
                     <h2 class="mb-0">
                         {{ $products->name }}
                         @if($products->trending == '1')
@@ -82,8 +82,10 @@
                         @endif
                     </h2>
                     <hr>
+                    <!-- preco original e preço de venda-->
                     <label class="me-3">Original Price : <s>€ {{ $products->original_price }}</s></label>
                     <label class="fw-bold">Selling Price : € {{ $products->selling_price }}</label>
+                    <!--estrelas de classificação-->
                     @php $ratenum = number_format($rating_value) @endphp
                     <div class="rating">
                         @for($i =1; $i<= $ratenum; $i++)

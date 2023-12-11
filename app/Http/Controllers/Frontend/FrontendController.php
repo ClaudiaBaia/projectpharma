@@ -82,7 +82,7 @@ class FrontendController extends Controller
 
         return $data;
     }
-
+// searching, pesquisa dos produtos 
     public function searchProduct(Request $request)
     {
         $searched_product = $request->product_name;

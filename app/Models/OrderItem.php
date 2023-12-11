@@ -19,7 +19,7 @@ class OrderItem extends Model
     ];
 
     /**
-     * Get the products that owns the OrderItem
+     * vai buscar os produtos que contem OrderItem
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
