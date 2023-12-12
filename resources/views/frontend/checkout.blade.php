@@ -135,7 +135,7 @@
     <script>
         paypal.Buttons({
             onClick: function(data, actions) {
-                // My validation...
+               
                 if($.trim($('.firstname').val()).length == 0){
                     error_fname = 'Please enter First Name';
                     $('#fname_error').text(error_fname);
@@ -230,7 +230,7 @@
                 }
             },
             createOrder: function(data, actions) {
-                // This function sets up the details of the transaction, including the amount and line item details.
+                //detalhes da transacao
                 return actions.order.create({
                 purchase_units: [{
                     amount: {
@@ -240,9 +240,9 @@
                 });
             },
             onApprove: function(data, actions) {
-                // This function captures the funds from the transaction.
+               
                 return actions.order.capture().then(function(details) {
-                // This function shows a transaction success message to your buyer.
+                // mensagem de sucesso ao comprador 
                     var firstname = $('.firstname').val();
                     var lastname = $('.lastname').val();
                     var email = $('.email').val();
@@ -281,7 +281,7 @@
                 });
             }
         }).render('#paypal-button-container');
-        //This function displays Smart Payment Buttons on your web page.
+        // Payment Buttons on your web page.
     </script>
 
 @endsection

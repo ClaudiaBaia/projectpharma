@@ -137,7 +137,7 @@ $(document).ready(function () {
                 success: function (response) {
                     var options = {
                         key: "rzp_test_oRfSzsSGPgUAwU", // Enter the Key ID generated from the Dashboard
-                        amount: 1 * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                        amount: 1 * 100, 
                         currency: "INR",
                         name: response.firstname + " " + response.lastname,
                         description: "Thank you for choosing us",
